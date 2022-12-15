@@ -7,7 +7,7 @@ import {
   TaskName,
   TaskDate,
 } from "./Task.styled";
-import taskImageSrc from "../../../assets/img/default_task.svg";
+import taskImageSrc from "../../../assets/img/default-task.svg";
 
 export const Task = () => {
   return (
