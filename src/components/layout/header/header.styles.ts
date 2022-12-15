@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 export const HeaderWrapper = styled.div`
+    background-color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
