@@ -10,6 +10,7 @@ export const HeaderWrapper = styled.div`
     height: 90px;
     border-radius: 10px;
 `
+
 export const AppHeading = styled.h2`
     font-family: 'Roboto';
     font-weight: 700;
