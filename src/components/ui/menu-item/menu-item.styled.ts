@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import propTypes from 'prop-types';
+// import { SVGIcon } from '../../../types/types';
 type ItemProps = { isActive : boolean};
 
 
@@ -23,8 +23,3 @@ export const MenuItemWrapper = styled.button`
         border-radius: 5px;
     }
 `;
-
-export const Icon = styled.img`
-    height: 24px;
-    width: 24px;
-` 

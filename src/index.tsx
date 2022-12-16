@@ -5,14 +5,21 @@ import reportWebVitals from "./reportWebVitals";
 import FontStyles from "./styles/fontStyles";
 import "./styles/null.css";
 import "./styles/styles.css";
+import { setupStore } from "./redux/store";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const store = setupStore();
+
 root.render(
   <React.StrictMode>
-    <FontStyles />
-    <App />
+    <Provider store={store}>
+      <FontStyles />
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

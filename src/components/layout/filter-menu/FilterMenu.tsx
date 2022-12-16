@@ -1,34 +1,44 @@
 import { useState } from "react";
+import * as React from "react";
 import { MenuItem } from "../../ui/menu-item/MenuItem";
 import { FilterButtonsWrapper, IconButton, MenuWrapper } from "./filter.styled";
-import checked from "../../../assets/img/checked-icon.svg";
-import date from "../../../assets/img/date-filter-icon.svg";
-import today from "../../../assets/img/today-icon.svg";
-import logout from "../../../assets/img/logout.svg";
-import { Icon } from "../../ui/menu-item/menu-item.styled";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
+import { Filter } from "../../../types/types";
+import { Checked, Date, LogoutIcon, TodayIcon } from "../../../assets/Icons";
 
 interface ItemProps {
   isActive: string;
 }
 
-const menuItems = [
-  { name: "Today", path: today },
-  { name: "Done", path: checked },
-  { name: "Date", path: date },
+type Items = {
+  name: Filter;
+  path: any;
+}[];
+
+const menuItems: Items = [
+  { name: "Today", path: <TodayIcon /> },
+  { name: "Done", path: <Checked /> },
+  { name: "Date", path: <Date /> },
 ];
 
 export const FilterMenu = () => {
-  const activeButton = useState(menuItems[0].name);
-  const isActive = "active";
+  const currentFilter = useSelector((state: RootState) => state.filter.filter);
+
   return (
     <MenuWrapper>
       <FilterButtonsWrapper>
-        {menuItems.map((menuItem) => (
-          <MenuItem title={menuItem.name} path={menuItem.path} />
+        {menuItems.map((menuItem, index) => (
+          <MenuItem
+            key={index}
+            title={menuItem.name}
+            icon={menuItem.path}
+            isActive={menuItem.name === currentFilter}
+          />
         ))}
       </FilterButtonsWrapper>
       <IconButton>
-        <Icon srcSet={logout} />
+        <LogoutIcon />
         Log Out
       </IconButton>
     </MenuWrapper>
