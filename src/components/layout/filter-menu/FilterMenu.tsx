@@ -5,7 +5,7 @@ import { FilterButtonsWrapper, IconButton, MenuWrapper } from "./filter.styled";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { Filter } from "../../../types/types";
-import { Checked, Date, LogoutIcon, TodayIcon } from "../../../assets/Icons";
+import { AddTaskIcon, Checked, Date, TodayIcon } from "../../../assets/Icons";
 
 interface ItemProps {
   isActive: string;
@@ -38,8 +38,8 @@ export const FilterMenu = () => {
         ))}
       </FilterButtonsWrapper>
       <IconButton>
-        <LogoutIcon />
-        Log Out
+        <AddTaskIcon />
+        Add Task
       </IconButton>
     </MenuWrapper>
   );

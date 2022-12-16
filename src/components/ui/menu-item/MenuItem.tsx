@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactNode } from "react";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../../redux/filters/filters";
 import { Filter } from "../../../types/types";

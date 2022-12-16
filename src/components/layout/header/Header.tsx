@@ -1,13 +1,14 @@
 import React from "react";
-import { AppHeading, HeaderWrapper, UserIcon, UserName } from "./header.styles";
+import { AppHeading, HeaderWrapper, UserName } from "./header.styles";
 import userIcon from "../../../assets/img/user-icon.svg";
+import { UserIcon } from "../../../assets/Icons";
 
 export const Header = () => {
   return (
     <HeaderWrapper>
-      <AppHeading>To-do</AppHeading>
+      <AppHeading>To-Do</AppHeading>
       <UserName>UserName</UserName>
-      <UserIcon srcSet={userIcon} />
+      <UserIcon />
     </HeaderWrapper>
   );
 };
