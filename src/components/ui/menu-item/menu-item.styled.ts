@@ -10,7 +10,7 @@ export const MenuItemWrapper = styled.button`
     align-items: center;
     background-color: ${(props:ItemProps) => props.isActive ? 'rgba(147, 51, 234, 0.06)' : 'none'};
     gap: 10px;
-    color: #9333EA;
+    color: ${(props:ItemProps) => props.isActive ? '#9333EA' : '#6B7280'};
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 16px;
