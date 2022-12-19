@@ -9,6 +9,7 @@ import {
   OptionsButton,
   TaskMenuContent,
   TaskMenuItem,
+  OptionsContainer,
 } from "./Task.styled";
 import {
   OptionsIcon,
@@ -31,14 +32,17 @@ export const Task = () => {
       <OptionsButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <OptionsIcon />
       </OptionsButton>
-      <TaskMenuContent isActive={isMenuOpen}>
-        <TaskMenuItem>
-          <EditIcon />
-        </TaskMenuItem>
-        <TaskMenuItem>
-          <DeleteIcon />
-        </TaskMenuItem>
-      </TaskMenuContent>
+
+      <OptionsContainer>
+        <TaskMenuContent isActive={isMenuOpen}>
+          <TaskMenuItem>
+            <EditIcon />
+          </TaskMenuItem>
+          <TaskMenuItem>
+            <DeleteIcon />
+          </TaskMenuItem>
+        </TaskMenuContent>
+      </OptionsContainer>
     </TaskWrapper>
   );
 };
