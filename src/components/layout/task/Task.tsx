@@ -10,22 +10,36 @@ import {
   TaskMenuContent,
   TaskMenuItem,
   OptionsContainer,
+  TaskTitleContainer,
+  Checkbox,
 } from "./Task.styled";
 import {
   OptionsIcon,
   DefaultTaskImg,
   EditIcon,
   DeleteIcon,
+  CheckedCheckbox,
+  Unchecked,
 } from "../../../assets/Icons";
 
 export const Task = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDone, setIsDone] = useState(false);
+
+  const handleChangeIsDone = () => {
+    setIsDone(!isDone);
+  };
   return (
     <TaskWrapper>
       <TaskContainerWrapper>
         <DefaultTaskImg />
         <TaskDataWrapper>
-          <TaskName>Task1</TaskName>
+          <TaskTitleContainer>
+            <TaskName>Task1</TaskName>
+            <Checkbox onClick={handleChangeIsDone}>
+              {isDone ? <CheckedCheckbox /> : <Unchecked />}
+            </Checkbox>
+          </TaskTitleContainer>
           <TaskDate>Today at 9:00 AM</TaskDate>
         </TaskDataWrapper>
       </TaskContainerWrapper>

@@ -23,6 +23,12 @@ export const TaskContainerWrapper = styled.div`
     gap: 20px;
 `
 
+export const TaskTitleContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
 export const TaskImage = styled.img``
 
 export const TaskDate = styled.p`
@@ -78,5 +84,11 @@ export const TaskMenuItem = styled.div`
     align-items: center;
     &:hover {
         background-color: #ddd;
+    }
+`
+
+export const Checkbox = styled.button`
+    &:hover {
+        opacity: 0.8;
     }
 `
