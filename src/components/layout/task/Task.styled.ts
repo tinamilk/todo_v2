@@ -14,13 +14,13 @@ export const TaskWrapper = styled.div`
 export const TaskDataWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80%;
     gap: 5px;
 `
 
 export const TaskContainerWrapper = styled.div`
     display: flex;
     flex-direction: row;
+    width: 90%;
     gap: 20px;
 `
 
@@ -51,7 +51,7 @@ export const OptionsContainer = styled.div`
 export const OptionsButton = styled.button`
     min-width: 30px;
     max-height: 30px;
-    margin-left: 20%;
+    /* margin-left: 10%; */
     &:hover {
         background: rgba(147, 51, 234, 0.06);
         border-radius: 50%;
