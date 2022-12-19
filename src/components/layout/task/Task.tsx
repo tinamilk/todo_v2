@@ -46,7 +46,6 @@ export const Task = () => {
       <OptionsButton onMouseEnter={() => setIsMenuOpen(true)}>
         <OptionsIcon />
       </OptionsButton>
-
       <OptionsContainer>
         <TaskMenuContent isActive={isMenuOpen}>
           <TaskMenuItem>

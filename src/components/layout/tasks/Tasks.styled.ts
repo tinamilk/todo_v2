@@ -7,6 +7,6 @@ export const TasksWrapper = styled.div`
   background-color: #fff;
   border-radius: 10px;
   min-height: 321px;
-  width: 466px;
+  width: 70%;
   padding: 16px 19px;
 `;
