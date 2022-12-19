@@ -49,10 +49,11 @@ export const OptionsContainer = styled.div`
 
 export const OptionsButton = styled.button`
     min-width: 30px;
+    max-height: 30px;
     margin-left: 50%;
     &:hover {
         background: rgba(147, 51, 234, 0.06);
-        border-radius: 5px;
+        border-radius: 50%;
     }
 `
 
@@ -89,6 +90,6 @@ export const TaskMenuItem = styled.div`
 
 export const Checkbox = styled.button`
     &:hover {
-        opacity: 0.8;
+        opacity: 0.7;
     }
 `

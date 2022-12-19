@@ -30,7 +30,7 @@ export const Task = () => {
     setIsDone(!isDone);
   };
   return (
-    <TaskWrapper>
+    <TaskWrapper onMouseLeave={() => setIsMenuOpen(false)}>
       <TaskContainerWrapper>
         <DefaultTaskImg />
         <TaskDataWrapper>
@@ -43,7 +43,7 @@ export const Task = () => {
           <TaskDate>Today at 9:00 AM</TaskDate>
         </TaskDataWrapper>
       </TaskContainerWrapper>
-      <OptionsButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <OptionsButton onMouseEnter={() => setIsMenuOpen(true)}>
         <OptionsIcon />
       </OptionsButton>
 
