@@ -51,7 +51,6 @@ export const OptionsContainer = styled.div`
 export const OptionsButton = styled.button`
     min-width: 30px;
     max-height: 30px;
-    /* margin-left: 10%; */
     &:hover {
         background: rgba(147, 51, 234, 0.06);
         border-radius: 50%;
@@ -76,7 +75,7 @@ export const TaskMenuContent = styled.div`
     top: 30px;
 `
 
-export const TaskMenuItem = styled.div`
+export const TaskMenuItem = styled.button`
     color: black;
     text-decoration: none;
     width: 50%;

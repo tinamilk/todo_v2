@@ -1,11 +1,12 @@
 
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import filterReducer from './filters/filters';
-;
+import modalReducer from './modal/modal'
 
 const rootReducer = combineReducers({
     // [goodsApi.reducerPath]: goodsApi.reducer,
-	filter: filterReducer
+	filter: filterReducer,
+	modal: modalReducer
 });
 
 export const setupStore = () => {

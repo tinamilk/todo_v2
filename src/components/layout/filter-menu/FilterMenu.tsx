@@ -1,11 +1,11 @@
 import { useState } from "react";
-import * as React from "react";
 import { MenuItem } from "../../ui/menu-item/MenuItem";
-import { FilterButtonsWrapper, IconButton, MenuWrapper } from "./filter.styled";
+import { FilterButtonsWrapper, MenuWrapper } from "./filter.styled";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { Filter } from "../../../types/types";
 import { AddTaskIcon, Checked, Date, TodayIcon } from "../../../assets/Icons";
+import { IconButton } from "../../ui/button/button.styled";
 
 interface ItemProps {
   isActive: string;
@@ -37,7 +37,7 @@ export const FilterMenu = () => {
           />
         ))}
       </FilterButtonsWrapper>
-      <IconButton>
+      <IconButton buttonType="default">
         <AddTaskIcon />
         Add Task
       </IconButton>
