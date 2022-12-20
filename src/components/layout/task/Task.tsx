@@ -54,16 +54,15 @@ export const Task = () => {
         </OptionsButton>
         <OptionsContainer>
           <TaskMenuContent isActive={isMenuOpen}>
-            <TaskMenuItem>
+            <TaskMenuItem onClick={() => dispatch(setActive("edit"))}>
               <EditIcon />
             </TaskMenuItem>
-            <TaskMenuItem onClick={() => dispatch(setActive())}>
+            <TaskMenuItem onClick={() => dispatch(setActive("delete"))}>
               <DeleteIcon />
             </TaskMenuItem>
           </TaskMenuContent>
         </OptionsContainer>
       </TaskWrapper>
-      <Modal heading={"Delete task"} content={<DeleteModal />} />
     </>
   );
 };

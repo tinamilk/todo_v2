@@ -12,10 +12,10 @@ type ModalProps = {
   content: JSX.Element;
 };
 
-export const Modal = ({ heading, content }: ModalProps) => {
+export const Modal = ({ heading, content }: ModalProps): JSX.Element => {
   const { isActive } = useSelector((state: RootState) => state.modal);
   return (
-    <ModalWrapper isActive={isActive}>
+    <ModalWrapper isActive={!!isActive}>
       <ModalContainer>
         <ModalHeadingWrapper>
           <ModalHeading>{heading}</ModalHeading>

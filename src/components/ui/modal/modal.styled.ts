@@ -22,7 +22,7 @@ export const ModalContainer = styled.div`
     z-index: 99999;
     pointer-events: all;
     min-width: 50%;
-    height: 20%;
+    /* height: 20%; */
     background-color: #fff;
     border-radius: 10px;
 `

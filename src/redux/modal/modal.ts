@@ -1,23 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 
 type ModalState = {
-    isActive: boolean;
+    isActive: string;
 }
 
 const initialState:ModalState = {
-	isActive: false
+	isActive: ''
 };
 
 export const modelSlice = createSlice({
 	name: 'modal',
 	initialState,
 	reducers: {
-		setActive: (state) => {
-			state.isActive = true;
+		setActive: (state, action: PayloadAction<string>) => {
+			state.isActive = action.payload;
 		},
 		setInactive: (state) => {
-			state.isActive = false;
+			state.isActive = '';
 		}
 	}
 });
