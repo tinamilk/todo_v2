@@ -3,16 +3,16 @@ import { useDispatch } from "react-redux";
 import { AddTaskIcon, CloseIcon } from "../../../assets/Icons";
 import { setInactive } from "../../../redux/modal/modal";
 import { IconButton } from "../../ui/button/button.styled";
+import { Input } from "../../ui/input/input.styled";
 import {
-  AddButton,
   ButtonsWrapper,
   DragFileElement,
   EditWrapper,
   Form,
   ImageUpload,
-  Input,
   UploadButton,
   UploadContent,
+  UploadInput,
 } from "./edit-modal.styled";
 
 const handleFile = (files: any) => {
@@ -79,7 +79,7 @@ export const EditModal = () => {
         onSubmit={(e) => e.preventDefault()}
         id="form-file-upload"
       >
-        <Input
+        <UploadInput
           id="form-file-upload"
           type="file"
           ref={inputRef}
@@ -103,7 +103,7 @@ export const EditModal = () => {
           />
         )}
       </Form>
-      <AddButton>Your todo text</AddButton>
+      <Input placeholder="Your todo text" isCentered={true}></Input>
       <ButtonsWrapper>
         <IconButton buttonType="default" onClick={HandleCloseModal}>
           <AddTaskIcon />

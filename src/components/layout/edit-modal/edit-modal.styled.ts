@@ -17,7 +17,7 @@ export const Form = styled.form`
     position: relative;
     width: 100%;
 `;
-export const Input = styled.input`
+export const UploadInput = styled.input`
     visibility: hidden;
     text-align: center;
     position: relative;
@@ -54,22 +54,6 @@ export const UploadButton = styled.button`
     &:hover{
         opacity: 0.7;
     }
-`
-
-export const AddButton = styled.button`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 8px 10px;
-    background: #F3F3F3;
-    border-radius: 5px;
-    width: 90%;
-    color: #6B7280;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
 `
 
 export const ButtonsWrapper = styled.div`
