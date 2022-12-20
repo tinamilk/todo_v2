@@ -24,7 +24,7 @@ export const IconButton = styled.button`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-width: 180px;
+    width: 180px;
     background: ${(props:ButtonProps) => buttonColors[props.buttonType].background};
     border-radius: 5px;
     font-family: 'Roboto';

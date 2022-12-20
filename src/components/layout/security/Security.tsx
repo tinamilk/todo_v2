@@ -9,7 +9,7 @@ export const Security = () => {
     <SecurityWrapper>
       <Heading>Edit Password</Heading>
       <Form>
-        <InputGroup>
+        <InputGroup height="40%">
           <Input isCentered={false} placeholder="Enter new password" />
           <Input isCentered={false} placeholder="Confirm password" />
         </InputGroup>
