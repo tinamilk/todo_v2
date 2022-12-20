@@ -13,13 +13,13 @@ import {
   UploadButton,
   UploadContent,
   UploadInput,
-} from "./edit-modal.styled";
+} from "./AddModal.styled";
 
 const handleFile = (files: any) => {
   alert("Number of files: " + files.length);
 };
 
-export const EditModal = () => {
+export const AddModal = () => {
   const dispatch = useDispatch();
 
   const HandleCloseModal = () => dispatch(setInactive());
@@ -107,7 +107,7 @@ export const EditModal = () => {
       <ButtonsWrapper>
         <IconButton buttonType="default" onClick={HandleCloseModal}>
           <AddTaskIcon />
-          Confirm
+          Add task
         </IconButton>
         <IconButton buttonType="red" onClick={HandleCloseModal}>
           <CloseIcon fill="#F56497" />

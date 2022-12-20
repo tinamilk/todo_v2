@@ -6,6 +6,8 @@ import { RootState } from "../../../redux/store";
 import { Filter } from "../../../types/types";
 import { AddTaskIcon, Checked, Date, TodayIcon } from "../../../assets/Icons";
 import { IconButton } from "../../ui/button/button.styled";
+import { useDispatch } from "react-redux";
+import { setActive } from "../../../redux/modal/modal";
 
 interface ItemProps {
   isActive: string;
@@ -24,6 +26,7 @@ const menuItems: Items = [
 
 export const FilterMenu = () => {
   const currentFilter = useSelector((state: RootState) => state.filter.filter);
+  const dispatch = useDispatch();
 
   return (
     <MenuWrapper>
@@ -37,7 +40,10 @@ export const FilterMenu = () => {
           />
         ))}
       </FilterButtonsWrapper>
-      <IconButton buttonType="default">
+      <IconButton
+        buttonType="default"
+        onClick={() => dispatch(setActive("add"))}
+      >
         <AddTaskIcon />
         Add Task
       </IconButton>
