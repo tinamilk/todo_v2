@@ -5,7 +5,7 @@ type InputProps = {
 }
 
 export const Input = styled.input`
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -16,7 +16,7 @@ export const Input = styled.input`
     border: none;
     background: #F3F3F3;
     border-radius: 5px;
-    padding: 5px 0;
+    padding: 5px 10px;
     text-align: ${(props:InputProps) => props.isCentered ? 'center' : 'left'};
 
     &:focus {

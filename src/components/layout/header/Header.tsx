@@ -1,6 +1,7 @@
 import React from "react";
 import { AppHeading, HeaderWrapper, PageHeading } from "./header.styles";
 import { UserIcon } from "../../../assets/Icons";
+import { NavLink } from "react-router-dom";
 
 type HeaderProps = {
   pageHeading: string;
@@ -9,9 +10,13 @@ type HeaderProps = {
 export const Header = ({ pageHeading }: HeaderProps) => {
   return (
     <HeaderWrapper>
-      <AppHeading>To-Do</AppHeading>
+      <NavLink to="/" style={{ textDecoration: "none" }}>
+        <AppHeading>To-Do</AppHeading>
+      </NavLink>
       <PageHeading>{pageHeading}</PageHeading>
-      <UserIcon />
+      <NavLink to="/settings">
+        <UserIcon />
+      </NavLink>
     </HeaderWrapper>
   );
 };
