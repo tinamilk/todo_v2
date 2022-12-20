@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { MenuItem } from "../../ui/menu-item/MenuItem";
-import { FilterButtonsWrapper, MenuWrapper } from "./filter.styled";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { Filter } from "../../../types/types";
@@ -8,6 +7,7 @@ import { AddTaskIcon, Checked, Date, TodayIcon } from "../../../assets/Icons";
 import { IconButton } from "../../ui/button/button.styled";
 import { useDispatch } from "react-redux";
 import { setActive } from "../../../redux/modal/modal";
+import { MenuWrapper, MenuButtonsWrapper } from "../../ui/menu/Menu.styled";
 
 interface ItemProps {
   isActive: string;
@@ -29,8 +29,8 @@ export const FilterMenu = () => {
   const dispatch = useDispatch();
 
   return (
-    <MenuWrapper>
-      <FilterButtonsWrapper>
+    <MenuWrapper gap="141px">
+      <MenuButtonsWrapper>
         {menuItems.map((menuItem, index) => (
           <MenuItem
             key={index}
@@ -39,7 +39,7 @@ export const FilterMenu = () => {
             isActive={menuItem.name === currentFilter}
           />
         ))}
-      </FilterButtonsWrapper>
+      </MenuButtonsWrapper>
       <IconButton
         buttonType="default"
         onClick={() => dispatch(setActive("add"))}

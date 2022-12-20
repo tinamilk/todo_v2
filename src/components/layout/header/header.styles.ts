@@ -20,7 +20,7 @@ export const AppHeading = styled.h2`
     color: #9333EA;
 `
 
-export const UserName = styled.div`
+export const PageHeading = styled.div`
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 16px;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-export type Filter = ''|'Today'|'Done'|'Date'
+export type Filter = string;
 
 export type Filters = {
     filter: Filter

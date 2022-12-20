@@ -1,12 +1,16 @@
 import React from "react";
-import { AppHeading, HeaderWrapper, UserName } from "./header.styles";
+import { AppHeading, HeaderWrapper, PageHeading } from "./header.styles";
 import { UserIcon } from "../../../assets/Icons";
 
-export const Header = () => {
+type HeaderProps = {
+  pageHeading: string;
+};
+
+export const Header = ({ pageHeading }: HeaderProps) => {
   return (
     <HeaderWrapper>
       <AppHeading>To-Do</AppHeading>
-      <UserName>UserName</UserName>
+      <PageHeading>{pageHeading}</PageHeading>
       <UserIcon />
     </HeaderWrapper>
   );

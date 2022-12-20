@@ -7,6 +7,7 @@ import "./styles/null.css";
 import "./styles/styles.css";
 import { setupStore } from "./redux/store";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -17,8 +18,10 @@ const store = setupStore();
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <FontStyles />
-      <App />
+      <BrowserRouter>
+        <FontStyles />
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

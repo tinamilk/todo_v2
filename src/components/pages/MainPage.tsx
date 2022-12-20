@@ -8,7 +8,7 @@ import { PageWrapper } from "../ui/page-wrapper/page-wrapper.styled";
 export const MainPage = () => {
   return (
     <PageWrapper>
-      <Header />
+      <Header pageHeading="userName" />
       <ContentWrapper>
         <FilterMenu />
         <Tasks />
