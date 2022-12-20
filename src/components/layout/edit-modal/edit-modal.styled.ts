@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type UploaderProps = {
+    isActive: boolean;
+}
+
 export const EditWrapper = styled.div`
     height: 80%;
     display: flex;
@@ -11,26 +15,26 @@ export const EditWrapper = styled.div`
 `
 export const Form = styled.form`
     position: relative;
+    width: 100%;
 `;
 export const Input = styled.input`
     visibility: hidden;
     text-align: center;
-  position: relative;
-    width: 100%;
+    position: relative;
+    width: 90%;
 `;
 
-export const Label = styled.label` 
-    position: relative;
-`
 export const ImageUpload = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #F5EDFD;
+    background: ${(props:UploaderProps) => props.isActive ? '#E1C8F9' : '#F5EDFD'};
     border-radius: 10px;
     width: 90%;
     min-height: 200px;
+    margin: 0 5%;
 `
 export const UploadContent = styled.p`
     font-family: 'Roboto';
@@ -47,6 +51,9 @@ export const UploadButton = styled.button`
     font-size: 20px;
     line-height: 24px;
     color: #F56497;
+    &:hover{
+        opacity: 0.7;
+    }
 `
 
 export const AddButton = styled.button`

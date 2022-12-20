@@ -11,7 +11,6 @@ import {
   Form,
   ImageUpload,
   Input,
-  Label,
   UploadButton,
   UploadContent,
 } from "./edit-modal.styled";
@@ -26,6 +25,8 @@ export const EditModal = () => {
   const HandleCloseModal = () => dispatch(setInactive());
 
   const [dragActive, setDragActive] = React.useState(false);
+
+  console.log(dragActive);
 
   const inputRef = React.useRef(null);
 
@@ -85,19 +86,16 @@ export const EditModal = () => {
           multiple={true}
           onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
         />
-        <Label id="form-file-upload">
-          <ImageUpload>
-            <UploadContent>
-              Drag image or{"  "}
-              <UploadButton onClick={onButtonClick}>click here</UploadButton> to
-              upload
-            </UploadContent>
-          </ImageUpload>
-        </Label>
+        <ImageUpload isActive={dragActive}>
+          <UploadContent>
+            Drag image or{"  "}
+            <UploadButton onClick={onButtonClick}>click here</UploadButton> to
+            upload
+          </UploadContent>
+        </ImageUpload>
         {dragActive && (
           <DragFileElement
             id="drag-file-element"
-            // onDragEnter={(e:React.DragEvent<HTMLDivElement>)=>handleDrag(e)}
             onDragEnter={handleDrag}
             onDragLeave={handleDrag}
             onDragOver={handleDrag}
