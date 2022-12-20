@@ -9,7 +9,19 @@ export const EditWrapper = styled.div`
     gap: 25px;
     padding: 15px 0;
 `
+export const Form = styled.form`
+    position: relative;
+`;
+export const Input = styled.input`
+    visibility: hidden;
+    text-align: center;
+  position: relative;
+    width: 100%;
+`;
 
+export const Label = styled.label` 
+    position: relative;
+`
 export const ImageUpload = styled.div`
     display: flex;
     flex-direction: column;
@@ -57,5 +69,16 @@ export const ButtonsWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    gap: 21px
+    gap: 21px;
+`
+
+export const DragFileElement = styled.div` 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
 `
