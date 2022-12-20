@@ -1,7 +1,8 @@
 import { ChangePassword } from "../../../assets/Icons";
 import { IconButton } from "../../ui/button/button.styled";
+import { Form, InputGroup } from "../../ui/form/Form.styled";
 import { Input } from "../../ui/input/input.styled";
-import { Form, Heading, InputGroup, SecurityWrapper } from "./Security.styled";
+import { Heading, SecurityWrapper } from "./Security.styled";
 
 export const Security = () => {
   return (

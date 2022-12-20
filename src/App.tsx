@@ -8,6 +8,7 @@ import { Modal } from "./components/ui/modal/Modal";
 import { RootState } from "./redux/store";
 import { Routes, Route } from "react-router-dom";
 import { Settings } from "./components/pages/Settings";
+import { Auth } from "./components/pages/Auth";
 
 function App() {
   const { isActive } = useSelector((state: RootState) => state.modal);
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
       {isActive === "delete" && (
         <Modal heading={"Delete task"} content={<DeleteModal />} />
