@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { EditIcon, UserPhoto } from "../../../assets/Icons";
+import { Statistics } from "../statistics/Statistics";
 import {
   ChangeEmailInput,
   ChangeNameInput,
@@ -9,6 +10,7 @@ import {
   UserEmail,
   UserName,
   UserPhotoWrapper,
+  UserStatistics,
 } from "./Profile.styled";
 
 interface HandleNameChangeInterface {
@@ -72,6 +74,10 @@ export const Profile = () => {
           />
         )}
       </UserData>
+      <UserStatistics>
+        <Statistics title="This week" percent={50} />
+        <Statistics title="All Time" percent={50} />
+      </UserStatistics>
     </ProfileWrapper>
   );
 };

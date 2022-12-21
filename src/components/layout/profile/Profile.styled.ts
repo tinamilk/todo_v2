@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ProfileWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     background-color: #fff;
     border-radius: 10px;
     min-height: 321px;
@@ -74,3 +74,11 @@ export const ChangeEmailInput = styled.input`
 `
 
 export const EditButton = styled.button``
+
+export const UserStatistics = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+`
