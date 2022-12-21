@@ -11,9 +11,26 @@ import {
   UserPhotoWrapper,
 } from "./Profile.styled";
 
+interface HandleNameChangeInterface {
+  target: HTMLInputElement;
+}
+
 export const Profile = () => {
   const [isUserNameChanging, setIsUserNameChanging] = useState(false);
   const [isUserEmailChanging, setIsUserEmailChanging] = useState(false);
+  const [changedName, setChangedName] = useState("");
+  const [changedEmail, setChangedEmail] = useState("");
+  const [name, setName] = useState("User Name");
+  const [email, setEmail] = useState("User@user.com");
+
+  const handleChangeName = () => {
+    setChangedName(name);
+    setIsUserNameChanging(false);
+  };
+  const handleChangeEmail = () => {
+    setChangedEmail(email);
+    setIsUserEmailChanging(false);
+  };
 
   return (
     <ProfileWrapper>
@@ -26,23 +43,33 @@ export const Profile = () => {
         </UserPhotoWrapper>
         {!isUserNameChanging ? (
           <UserName>
-            User Name
+            {changedName || "User Name"}
             <EditButton onClick={() => setIsUserNameChanging(true)}>
               <EditIcon width={"10"} height={"10"} />
             </EditButton>
           </UserName>
         ) : (
-          <ChangeNameInput defaultValue="User Name" />
+          <ChangeNameInput
+            autoFocus
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleChangeName()}
+            value={name}
+          />
         )}
         {!isUserEmailChanging ? (
           <UserEmail>
-            User@user.com
+            {changedEmail || "User@user.com"}
             <EditButton onClick={() => setIsUserEmailChanging(true)}>
               <EditIcon width={"10"} height={"10"} />
             </EditButton>
           </UserEmail>
         ) : (
-          <ChangeEmailInput defaultValue="User@user.com" />
+          <ChangeEmailInput
+            autoFocus
+            onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleChangeEmail()}
+            value={email}
+          />
         )}
       </UserData>
     </ProfileWrapper>
