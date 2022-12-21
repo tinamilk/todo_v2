@@ -13,7 +13,6 @@ export const Security = () => {
           <Input isCentered={false} placeholder="Enter new password" />
           <Input isCentered={false} placeholder="Confirm password" />
         </InputGroup>
-
         <IconButton buttonType="default">
           <ChangePassword />
           Change password

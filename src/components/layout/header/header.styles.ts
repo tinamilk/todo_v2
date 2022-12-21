@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const HeaderWrapper = styled.div`
-    width: 50%;
+    width: 100%;
     padding: 16px;
     background-color: #fff;
     display: flex;

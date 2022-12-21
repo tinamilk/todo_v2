@@ -9,12 +9,20 @@ import { RootState } from "./redux/store";
 import { Routes, Route } from "react-router-dom";
 import { Settings } from "./components/pages/Settings";
 import { Auth } from "./components/pages/Auth";
+import { ScreenWrapper } from "./components/ui/screen-wrapper/ScreenWrapper";
+import {
+  ScreenHeading,
+  Span,
+} from "./components/ui/screen-heading/ScreenHeading";
 
 function App() {
   const { isActive } = useSelector((state: RootState) => state.modal);
 
   return (
-    <div className="App">
+    <ScreenWrapper>
+      <ScreenHeading>
+        To-Do <Span> UI</Span>
+      </ScreenHeading>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/settings" element={<Settings />} />
@@ -29,7 +37,7 @@ function App() {
       {isActive === "add" && (
         <Modal heading={"Create task"} content={<AddModal />} />
       )}
-    </div>
+    </ScreenWrapper>
   );
 }
 
