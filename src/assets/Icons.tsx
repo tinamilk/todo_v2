@@ -199,10 +199,36 @@ export const OptionsIcon = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const UserPhoto = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 100 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_105_82)">
+      <path
+        d="M50.0001 100C77.6144 100 100 77.6144 100 50.0001C100 22.3858 77.6144 0 50.0001 0C22.3858 0 0 22.3858 0 50.0001C0 77.6144 22.3858 100 50.0001 100Z"
+        fill="#67B8CB"
+      />
+      <path
+        d="M77.7635 75.0215C77.7635 76.5358 76.5359 77.7643 75.0198 77.7643H24.982C23.4676 77.7643 22.24 76.5358 22.24 75.0215V24.9827C22.24 23.4678 23.4676 22.2399 24.982 22.2399H75.0207C76.5365 22.2399 77.7643 23.4675 77.7643 24.9827L77.7635 75.0215Z"
+        fill="#FFF4E4"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_105_82">
+        <rect width="100" height="100" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 export const EditIcon = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
   <svg
-    width="16"
-    height="15"
+    width={props.width || "16"}
+    height={props.height || "15"}
     viewBox="0 0 16 15"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -335,7 +361,7 @@ export const ChangePassword = ({
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_108_130)">
+    <g clipPath="url(#clip0_108_130)">
       <path
         d="M9.75 12.3687L8.13125 10.75L7.25 11.6312L9.75 14.1312L14.75 9.13125L13.8688 8.25L9.75 12.3687Z"
         fill="#9333EA"

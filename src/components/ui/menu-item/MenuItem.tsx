@@ -16,8 +16,8 @@ export const MenuItem = ({ title, isActive, icon, changeType }: PropsType) => {
   const iconColor = isActive ? "#9333EA" : "#6B7280";
 
   const handleChangeActive = () => {
-    if (changeType) {
-      changeType(title);
+    if (title == "Profile" || title === "Security") {
+      changeType && changeType(title.toLowerCase());
       return;
     }
 

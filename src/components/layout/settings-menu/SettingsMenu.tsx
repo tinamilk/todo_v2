@@ -32,7 +32,7 @@ export const SettingsMenu = ({ changeType, currentType }: Props) => {
             key={index}
             title={menuItem.name}
             icon={menuItem.path}
-            isActive={currentType === menuItem.name}
+            isActive={currentType === menuItem.name.toLowerCase()}
             changeType={changeType}
           />
         ))}
