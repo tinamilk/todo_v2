@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { EditIcon, UserPhoto } from "../../../assets/Icons";
 import { Statistics } from "../statistics/Statistics";
 import {
+  AddPhotoInput,
+  AddPhotoLabel,
+  ChangedUserPhoto,
   ChangeEmailInput,
   ChangeNameInput,
   EditButton,
@@ -13,10 +16,6 @@ import {
   UserStatistics,
 } from "./Profile.styled";
 
-interface HandleNameChangeInterface {
-  target: HTMLInputElement;
-}
-
 export const Profile = () => {
   const [isUserNameChanging, setIsUserNameChanging] = useState(false);
   const [isUserEmailChanging, setIsUserEmailChanging] = useState(false);
@@ -24,6 +23,14 @@ export const Profile = () => {
   const [changedEmail, setChangedEmail] = useState("");
   const [name, setName] = useState("User Name");
   const [email, setEmail] = useState("User@user.com");
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState<null | string>(null);
+
+  useEffect(() => {
+    if (selectedImage) {
+      setImageUrl(URL.createObjectURL(selectedImage));
+    }
+  }, [selectedImage]);
 
   const handleChangeName = () => {
     setChangedName(name);
@@ -38,10 +45,20 @@ export const Profile = () => {
     <ProfileWrapper>
       <UserData>
         <UserPhotoWrapper>
-          <UserPhoto />
-          <EditButton>
+          {imageUrl && selectedImage ? (
+            <ChangedUserPhoto src={imageUrl} />
+          ) : (
+            <UserPhoto />
+          )}
+          <AddPhotoInput
+            id="add-photo"
+            type="file"
+            accept="image/*"
+            onChange={(e: any) => setSelectedImage(e.target.files[0])}
+          />
+          <AddPhotoLabel htmlFor="add-photo">
             <EditIcon width={"10"} height={"10"} />
-          </EditButton>
+          </AddPhotoLabel>
         </UserPhotoWrapper>
         {!isUserNameChanging ? (
           <UserName>

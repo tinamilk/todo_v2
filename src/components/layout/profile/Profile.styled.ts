@@ -43,7 +43,10 @@ export const UserEmail = styled.div`
 `
 
 export const UserPhotoWrapper = styled.div`
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
 `
 
 export const ChangeNameInput = styled.input`
@@ -73,7 +76,11 @@ export const ChangeEmailInput = styled.input`
     }
 `
 
-export const EditButton = styled.button``
+export const EditButton = styled.button`
+    &:hover {
+        opacity: 0.7;
+    }
+`
 
 export const UserStatistics = styled.div`
     display: flex;
@@ -81,4 +88,20 @@ export const UserStatistics = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10%;
+`
+
+export const AddPhotoInput = styled.input`
+    display: none;
+
+`
+
+export const AddPhotoLabel = styled.label`
+    &:hover {
+        opacity: 0.7;
+    }
+`
+
+export const ChangedUserPhoto = styled.img`
+    width: 100px;
+    height: 100px;
 `

@@ -26,8 +26,6 @@ export const EditModal = () => {
 
   const [dragActive, setDragActive] = React.useState(false);
 
-  console.log(dragActive);
-
   const inputRef = React.useRef(null);
 
   const handleDrag = (e: React.DragEvent<HTMLFormElement | HTMLDivElement>) => {
