@@ -6,12 +6,18 @@ import { ContentWrapper } from "../ui/content-wrapper/content-wrapper";
 import { PageWrapper } from "../ui/page-wrapper/page-wrapper.styled";
 
 export const Auth = () => {
-  const [authType, setAuthType] = useState("signup");
+  const [authType, setAuthType] = useState("login");
+
+  const handleAuthTypeChange = (type: string) => setAuthType(type);
   return (
     <PageWrapper>
       <Header pageHeading="userName" />
       <ContentWrapper>
-        {authType === "login" ? <Login /> : <Signup />}
+        {authType === "login" ? (
+          <Login setAuthType={handleAuthTypeChange} />
+        ) : (
+          <Signup setAuthType={handleAuthTypeChange} />
+        )}
       </ContentWrapper>
     </PageWrapper>
   );
